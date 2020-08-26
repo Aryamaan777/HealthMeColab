@@ -1,0 +1,35 @@
+body
+{
+	background: rgb(232,255,0);
+background: linear-gradient(0deg, rgba(232,255,0,1) 0%, rgba(0,255,166,1) 0%);
+}
+
+#content
+{
+	text-align:center;
+}
+
+#choose_content{
+	text-align: center;
+	align-content: center;
+	width:auto;
+	float:left;
+}
+
+#prediction_content
+{
+	position:relative;
+	float:left;
+	margin-left: 30%;
+}
+
+#chosen_symptoms
+{
+	width:450px;
+	float: right;
+}
+
+/*div
+{
+	border:2px solid black;
+}*/
