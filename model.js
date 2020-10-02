@@ -9,17 +9,21 @@ var search=document.getElementById("search").value;
 var chosen=document.getElementById("chosen_symptoms");
 console.log(search);
 var search=0;
+
+// Suggestions
 for(var i=0;i<4;i++)
 {
 	var button=buttons[i];
-	button.innerHTML=symptoms[i];
+	button.innerHTML=symptoms[i].replaceAll("_", " ", );
 	button.value=symptoms[i];
 	button.style.display="block";
 }
+
+// Chosen Symptoms
 for(var i=0;i<symptoms.length;i++)
 {
 	var button=document.createElement("button");
-	button.innerHTML=symptoms[i];
+	button.innerHTML=symptoms[i].replaceAll("_", " ");
 	button.value=symptoms[i];
 	button.id=i;
 	button.style.display="none";
@@ -82,11 +86,11 @@ $("#submit").click(function(){
 	{
 		if(regex.test(symptoms[i])==true)
 		{
-			possible_symptoms.push(symptoms[i]);
+			possible_symptoms.push(symptoms[i].replaceAll("_", " "));
 		}
 		else if(regex2.test(symptoms[i])==true)
 		{
-			possible_symptoms.push(symptoms[i]);
+			possible_symptoms.push(symptoms[i].replaceAll("_", " "));
 		}
 	}
 	length_to_display=4;
