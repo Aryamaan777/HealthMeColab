@@ -9,9 +9,30 @@
 
 #search {
     text-align: left;
-    width: 300px;
+    width: 30vw;
 }
 
+#suggestions, #chosen {
+    width: 30vw;
+    background-color: #EBEBED;
+    border-radius: 0 0 10px 10px;
+}
+
+#chosen {
+    border-radius: 10px;
+}
+
+table, th, td {
+    border: 1px solid #000000;
+} 
+
 button {
+    background-color: #EBEBED;
+    border: 0px;
+    /* color: #1E90ff; */
     display: block;
+}
+
+button:focus {
+    outline: 0px;
 }

@@ -42,20 +42,23 @@
 					<input type="text" id="search" placeholder="Type your symptom here" autofocus="on" onkeyup="findSymp()">
 				</form>
 	
-				<br><br>
-				<button id="11"></button><br>
-				<button id="21"></button><br>
-				<button id="31"></button><br>
-				<button id="41"></button><br>
+				<div id="suggestions">
+					<br>
+					<button id="11"></button>
+					<button id="21"></button>
+					<button id="31"></button>
+					<button id="41"></button>
+					<br>
+				</div>
 			</div>
 
 			<div id="chosen_symptoms" class="col-sm-6">
 				<h3>My Symptoms</h3><br>
-				<table><tbody></tbody></table>
+				<div id=chosen></div>
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="model.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<!-- <script type="text/javascript" src="script.js"></script> -->
 </html>

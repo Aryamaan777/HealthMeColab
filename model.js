@@ -6,7 +6,7 @@ var last=3;
 var body=document.getElementsByTagName("body")[0];
 var buttons=document.getElementsByTagName("button");
 var search=document.getElementById("search").value;
-var chosen=document.getElementById("chosen_symptoms");
+var chosen=document.getElementById("chosen");
 console.log(search);
 var search=0;
 
@@ -146,4 +146,3 @@ $('form input').keydown(function (e) {
         return false;
     }
 });
-//run();
