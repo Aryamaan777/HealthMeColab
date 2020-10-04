@@ -13,6 +13,7 @@
 }
 
 #suggestions, #chosen {
+    min-height: 50px;
     width: 30vw;
     background-color: #EBEBED;
     border-radius: 0 0 10px 10px;
