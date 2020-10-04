@@ -10,11 +10,11 @@ var chosen=document.getElementById("chosen_symptoms");
 console.log(search);
 var search=0;
 
-// Suggestions
+// Initial Suggestions
 for(var i=0;i<4;i++)
 {
 	var button=buttons[i];
-	button.innerHTML=symptoms[i].replaceAll("_", " ", );
+	button.innerHTML=symptoms[i].replaceAll("_", " ");
 	button.value=symptoms[i];
 	button.style.display="block";
 }
@@ -70,7 +70,7 @@ async function run(){
 	//pred.print();
 }
 
-$("#submit").click(function(){
+function findSymp(){
 	search=1;
 	for(var i=0;i<4;i++)
 	{
@@ -79,18 +79,18 @@ $("#submit").click(function(){
 	}
 	var search=document.getElementById("search").value;
 	console.log(search);
-	var regex=new RegExp("^"+search);
-	var regex2=new RegExp("^ "+search);
+	var regex=new RegExp("^"+search, "i");
+	var regex2=new RegExp("^ "+search, "i");
 	var possible_symptoms=[]
 	for(var i=0;i<symptoms.length;i++)
 	{
 		if(regex.test(symptoms[i])==true)
 		{
-			possible_symptoms.push(symptoms[i].replaceAll("_", " "));
+			possible_symptoms.push(symptoms[i]);
 		}
 		else if(regex2.test(symptoms[i])==true)
 		{
-			possible_symptoms.push(symptoms[i].replaceAll("_", " "));
+			possible_symptoms.push(symptoms[i]);
 		}
 	}
 	length_to_display=4;
@@ -101,7 +101,7 @@ $("#submit").click(function(){
 	for(var i=0;i<length_to_display;i++)
 	{
 		var button=buttons[i];
-		button.innerHTML=possible_symptoms[i];
+		button.innerHTML=possible_symptoms[i].replaceAll("_", " ");
 		button.value=possible_symptoms[i];	
 	}
 	console.log(length_to_display);
@@ -112,7 +112,7 @@ $("#submit").click(function(){
 	}
 	console.log(possible_symptoms);
 	possible_symptoms=[];
-})
+}
 
 $("button").click(function(){
 	var val=$(this).val();
@@ -134,8 +134,16 @@ $("button").click(function(){
 	}
 	console.log(input_predictions);
 	last=last+1;
-	$(this).html(symptoms[last]);
+	$(this).html(symptoms[last].replaceAll("_", " "));
 	$(this).val(symptoms[last]);
 	run();
-})
+});
+
+// Prevent submit on enter
+$('form input').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+});
 //run();
