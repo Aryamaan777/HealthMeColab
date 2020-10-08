@@ -10,6 +10,13 @@ var chosen=document.getElementById("chosen");
 console.log(search);
 var search=0;
 
+function check_theme() {
+	if(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		$("#favicon").attr("href","images/favicon_dark.ico");
+	else
+		$("#favicon").attr("href","favicon.ico");
+}
+
 // Initial Suggestions
 for(var i=0;i<4;i++)
 {
@@ -145,4 +152,25 @@ $('form input').keydown(function (e) {
         e.preventDefault();
         return false;
     }
+});
+
+// Share
+const shareButton = document.querySelector('#share-button');
+
+shareButton.addEventListener('click', event => {
+  if (navigator.share) { 
+   navigator.share({
+      title: 'Coronavirus Live Tracker',
+      url: 'https://coronavirus-live-tracker.herokuapp.com/'
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+});
+
+closeButton.addEventListener('click', event => {
+  shareDialog.classList.remove('is-open');
 });

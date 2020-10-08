@@ -2,6 +2,12 @@
 <html>
 	<head>
 		<title>Health Me!</title>
+		<!-- Font Awesome -->
+		<script src="https://kit.fontawesome.com/ccec0b4920.js" crossorigin="anonymous"></script>
+		
+		<!-- favicon -->
+		<link id="favicon" rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		
 		<!-- Import TensorFlow.js -->
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.3.0/dist/tf.min.js"></script>
 		<!-- Import tfjs-vis -->
@@ -13,13 +19,14 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-		<!-- <link rel="stylesheet" href="style.css"> -->
-		<link rel="stylesheet" href="styles.css">
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/large.css">
 
 	</head>
-<body>
+<body  onload="check_theme()">
 	<div id="content" class="navbar">
-		<h1>Health Me!</h1>
+		<h1><i class="fas fa-heartbeat"></i> Health Me!</h1><i id="share-button" class="fas fa-share-alt"></i>
 	</div>
 	<div class="container">
 		<br>
@@ -32,11 +39,11 @@
 			</div>
 		</div>
 
-		<br>
+		<br><br>
 
-		<div class="row">
+		<div class="row" id="row2">
 
-			<div id="choose_content" class="col-sm-6">
+			<div id="choose_content" class="col-sm-12 col-lg-6">
 				<h3>Search</h3><br>
 				<form autocomplete="off">
 					<input type="text" id="search" placeholder="Type your symptom here" autofocus="on" onkeyup="findSymp()">
@@ -51,14 +58,13 @@
 					<br>
 				</div>
 			</div>
-
-			<div id="chosen_symptoms" class="col-sm-6">
+			
+			<div id="chosen_symptoms" class="col-sm-12 col-lg-6">
 				<h3>My Symptoms</h3><br>
 				<div id=chosen></div>
-			</div>
+			</div><br>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="model.js"></script>
-<!-- <script type="text/javascript" src="script.js"></script> -->
 </html>

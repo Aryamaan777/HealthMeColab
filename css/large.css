@@ -1,0 +1,30 @@
+@media(min-width: 992px) {
+
+    .navbar #share {
+        display: none;
+    }
+    
+    #search {
+        width: 30vw;
+    }
+    
+    #suggestions, #chosen {
+        min-height: 50px;
+        width: 30vw;
+    }
+    
+    #chosen {
+        max-height: 60vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    } 
+
+    button:hover {
+        background-color: #9E9EA0;
+    }
+
+    button:active {
+        background-color: #EBEBED;
+    }
+}
