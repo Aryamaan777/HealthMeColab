@@ -161,7 +161,7 @@ shareButton.addEventListener('click', event => {
   if (navigator.share) { 
    navigator.share({
       title: 'Coronavirus Live Tracker',
-      url: 'https://coronavirus-live-tracker.herokuapp.com/'
+      url: 'https://healthme.netlify.app'
     }).then(() => {
       console.log('Thanks for sharing!');
     })
