@@ -1,11 +1,29 @@
 @media(min-width: 992px) {
 
-    .navbar #share {
+    .navbar {
+        height: 12vh;
+    }
+
+    .navbar h1 {
+        font-size: 3.3rem;
+    }
+
+    .navbar #share-button {
         display: none;
+    }
+
+    h3 {
+        font-size: 2.3rem;
+    }
+
+    p {
+        font-size: 1.7rem;
     }
     
     #search {
+        font-size: 1.2rem;
         width: 30vw;
+        border: 1px solid black;
     }
     
     #suggestions, #chosen {
@@ -19,6 +37,10 @@
         padding-bottom: 20px;
         border-radius: 10px;
     } 
+
+    button {
+        font-size: 1.2rem;
+    }
 
     button:hover {
         background-color: #9E9EA0;
